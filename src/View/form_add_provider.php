@@ -32,7 +32,7 @@
                 <legend>Endereço do fornecedor</legend>
                 <section class= "mt-4 columns-3">
                     <article>
-                        <label for="publicSpace">Logradouro</label>
+                        <label for="publicPlace">Logradouro</label>
                         <input type="text" id="publicPlace" name="publicPlace" class="border border-blue-300"  >
                     </article>
                     <article>
