@@ -44,4 +44,9 @@ class Product
     {
         return $this->price / $costOfOperation;
     }
+
+    public function __get($attribute)
+    {
+        return $this->$attribute;
+    }
 }

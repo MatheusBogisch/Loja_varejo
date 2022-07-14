@@ -2,10 +2,12 @@
 
 namespace APP\Controller;
 
+use APP\Model\DAO\ProductDAO;
 use APP\Model\Product;
 use APP\Model\Provider;
 use APP\Utils\Redirect;
 use APP\Model\Validation;
+use PDOException;
 
 require '../../vendor/autoload.php';
 
@@ -61,7 +63,17 @@ if ($error) {
             name:"Fornecedor Padrão"
         )
     );
-    Redirect::redirect(
-        message: "O produto $productName foi cadastrado com sucesso!!!"
-    );
+    try{
+        $dao = new ProductDAO();
+        $result = $dao->insert($product);
+        
+        if ($result){
+            Redirect::redirect(
+                message: "O produto $productName foi cadastrado com sucesso!!!"
+            );
+        }else {Redirect::redirect("Lamento nao foi possivel cadastrar o produto $productName", type:'error');
+        }
+    } catch (PDOException $e){
+        Redirect::redirect("lamento. Houve um erro inesperado: ", type: 'error');
+    }
 }
