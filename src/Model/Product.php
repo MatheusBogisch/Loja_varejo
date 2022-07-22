@@ -4,6 +4,7 @@ namespace APP\Model;
 
 class Product
 {
+    private int $id;
     private string $name;
     private float $price;
     private int $quantity;
@@ -16,7 +17,8 @@ class Product
         float $lucre,
         string $name,
         int $quantity,
-        Provider $provider
+        Provider $provider,
+        int $id =0
     )
     {
         self::calculateFinalPrice(
@@ -28,6 +30,7 @@ class Product
         $this->name = $name;
         $this->quantity = $quantity;
         $this->provider = $provider;
+        $this->id = $id;
     }
 
     private function calculateFinalPrice(float $cost, float $tax, float $costOfOperation, float $lucre = 0.4): void

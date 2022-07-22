@@ -13,7 +13,7 @@ class Connection
         
     }
 
-    public static function getConnetcion()
+    public static function getConnection()
     {
         if(empty(self::$connection)){
             self::$connection = new PDO( DNS,USER,PASSWORD, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION 

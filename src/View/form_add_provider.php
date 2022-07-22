@@ -8,7 +8,23 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form action="../controller/Provider.php" method="POST">
+<nav class="bg-blue-400">
+      <ul>
+        <li class="inline">
+            <a href="dashboard.php">Home</a>
+        </li>
+        <li class="inline">
+            <a href="form_add_product.php">Novo produto</a>
+        </li>
+        <li class="inline">
+          <a href="form_add_provider.php">Novo fornecedor</a>
+      </li>
+      <li class="inline">
+        <a href="list_of_Products.php">Listar Produtos</a>
+      </li>
+      </ul>
+    </nav>
+    <form action="../controller/Provider.php? operation=insert" method="POST">
         <fieldset class="p-4 m-5 border border-blue-400">
             <legend>Dados do fornecedor</legend>
             <section class="columns-2">
@@ -44,7 +60,7 @@
                         <input type="text" id="complement" name="complement" class="border border-blue-300">
                     </article>
                 </section>
-                <section class="mt-4 columns-3">
+                <section class="mt-4 columns-4">
                     <article>
                         <label for="neighborhood">Bairro</label>
                         <input type="text" id="neighborhood" name="neighborhood" class="border border-blue-300">
@@ -56,6 +72,10 @@
                     <article>
                         <label for="zipCode">CEP</label>
                         <input type="text" id="zipCode" name="zipCode" class="border border-blue-300">
+                    </article>
+                    <article>
+                        <label for="streetName">Nome da rua</label>
+                        <input type="text" id="streetName" name="streetName" class="border border-blue-300">
                     </article>
                 </section>
             </fieldset>
